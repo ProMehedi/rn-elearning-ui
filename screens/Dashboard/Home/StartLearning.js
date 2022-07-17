@@ -3,6 +3,7 @@ import { View, Text, ImageBackground, StyleSheet, Image } from 'react-native';
 
 // Components
 import { COLORS, FONTS, images, SIZES } from '../../../constants';
+import { TextButton } from '../../../components';
 
 const StartLearning = () => {
   return (
@@ -20,7 +21,11 @@ const StartLearning = () => {
 
       <Image source={images.start_learning} style={styles.image} />
 
-      <Text>Button Here</Text>
+      <TextButton
+        label="Start Learning"
+        containerStyle={styles.button}
+        labelStyle={{ color: COLORS.black }}
+      />
     </ImageBackground>
   );
 };
@@ -48,6 +53,12 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 110,
     marginTop: SIZES.padding,
+  },
+  button: {
+    height: 40,
+    paddingHorizontal: SIZES.padding,
+    borderRadius: 20,
+    backgroundColor: COLORS.white,
   },
 });
 
