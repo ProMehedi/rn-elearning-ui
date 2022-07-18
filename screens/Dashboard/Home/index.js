@@ -7,6 +7,7 @@ import StartLearning from './StartLearning';
 import Header from './Header';
 import Courses from './Courses';
 import { LineDevider } from '../../../components';
+import Categories from './Categories';
 
 const Home = () => {
   return (
@@ -19,6 +20,8 @@ const Home = () => {
         <Courses />
 
         <LineDevider lineStyle={{ marginVertical: SIZES.padding }} />
+
+        <Categories />
       </ScrollView>
     </View>
   );

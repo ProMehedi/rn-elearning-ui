@@ -15,7 +15,7 @@ const Section = ({ containerStyle, title, onPress, children }) => {
         />
       </View>
 
-      <View>{children}</View>
+      {children}
     </View>
   );
 };
