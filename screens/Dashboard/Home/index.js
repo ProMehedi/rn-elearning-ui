@@ -5,6 +5,7 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 import { COLORS, SIZES } from '../../../constants';
 import StartLearning from './StartLearning';
 import Header from './Header';
+import Courses from './Courses';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         contentContainerStyle={{ paddingBottom: 150 }}
         showsVerticalScrollIndicator={false}>
         <StartLearning />
+        <Courses />
       </ScrollView>
     </View>
   );

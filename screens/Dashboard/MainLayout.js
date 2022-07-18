@@ -7,18 +7,18 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import {Shadow} from 'react-native-shadow-2';
+import { Shadow } from 'react-native-shadow-2';
 
 // Components
-import {COLORS, constants, FONTS, SIZES} from '../../constants';
-import {Home, Search, Profile} from '../../screens';
+import { COLORS, constants, FONTS, SIZES } from '../../constants';
+import { Home, Search, Profile } from '../../screens';
 
 const bottom_tabs = constants.bottom_tabs.map(bottom_tab => ({
   ...bottom_tab,
   ref: React.createRef(),
 }));
 
-const TabIndicator = ({scrollX, measureLayout}) => {
+const TabIndicator = ({ scrollX, measureLayout }) => {
   const inputRange = bottom_tabs.map((_, i) => i * SIZES.width);
 
   const tabIndicatorWidth = scrollX.interpolate({
@@ -36,13 +36,13 @@ const TabIndicator = ({scrollX, measureLayout}) => {
       style={{
         ...styles.btIndicator,
         width: tabIndicatorWidth,
-        transform: [{translateX}],
+        transform: [{ translateX }],
       }}
     />
   );
 };
 
-const Tabs = ({scrollX, onBtTabPress}) => {
+const Tabs = ({ scrollX, onBtTabPress }) => {
   const containerRef = React.useRef();
   const [measureLayout, setMeasureLayout] = React.useState([]);
 
@@ -77,7 +77,7 @@ const Tabs = ({scrollX, onBtTabPress}) => {
       )}
 
       {bottom_tabs.map((item, index) => {
-        const {icon, label} = item;
+        const { icon, label } = item;
         return (
           <TouchableOpacity
             key={label}
@@ -121,10 +121,10 @@ const MainLayout = () => {
           data={constants.bottom_tabs}
           keyExtractor={item => `Main-${item.id}`}
           onScroll={Animated.event(
-            [{nativeEvent: {contentOffset: {x: scrollX}}}],
-            {useNativeDriver: false},
+            [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+            { useNativeDriver: false },
           )}
-          renderItem={({item}) => (
+          renderItem={({ item }) => (
             <View style={styles.tab}>
               {item.label === constants.screens.home && <Home />}
               {item.label === constants.screens.search && <Search />}
