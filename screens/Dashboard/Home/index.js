@@ -6,6 +6,7 @@ import { COLORS, SIZES } from '../../../constants';
 import StartLearning from './StartLearning';
 import Header from './Header';
 import Courses from './Courses';
+import { LineDevider } from '../../../components';
 
 const Home = () => {
   return (
@@ -16,6 +17,8 @@ const Home = () => {
         showsVerticalScrollIndicator={false}>
         <StartLearning />
         <Courses />
+
+        <LineDevider lineStyle={{ marginVertical: SIZES.padding }} />
       </ScrollView>
     </View>
   );
